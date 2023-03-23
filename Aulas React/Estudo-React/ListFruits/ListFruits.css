@@ -1,0 +1,44 @@
+.resultado {
+  border: 1px solid black;
+  width: 100%;
+ 
+}
+.resultado h1 {
+  color: brown;
+}
+body {
+  background-color: rgba(171, 170, 170, 0.505) !important;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  display: flex;
+
+}
+.form button {
+  height: 20px;
+  background-color: rgba(165, 42, 42, 0.727);
+  border-radius: 8px;
+  margin-top: 11px;
+}
+.fruta-imagem {
+  width: 300px;
+  height: 300px;
+}
+.resultado {
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.resultado > div {
+  text-align: center;
+  width: 250px;
+  margin: 10px;
+}

@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(33, 32, 32);
+
+}
+
+nav {
+  padding-top: 10px;
+  height: 100px;
+  background-color: rgb(33, 32, 32);
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  padding-top: 35px;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+ul li a {
+
+  padding: 30px;
+  text-decoration: none;
+
+
+}
+
+ul {
+  padding-top: 10px;
+
+  list-style: none;
+
+}
+
+li a {
+  color: aliceblue;
+  font-size: 25px;
+}
+
+
+ul li a:hover {
+  background-color: rgba(241, 43, 43, 0.532);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(33, 32, 32);
+  color: aliceblue;
+  margin-top: 50px;
+
+
+}
+
+.produtos {
+  display: flex;
+  padding: 60px;
+  flex-wrap: wrap;
+  
+
+}
+
+
+img:hover{
+  background-color: rgba(241, 43, 43, 0.532);
+}
+
+.produtos img {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin-top: 50px;
+  
+}
+.produtos h3{
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.footer {
+  display: flex;
+  width: 100%;
+  padding-top: 35px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.searchImput {
+  color: aliceblue;
+  width: 200px;
+  height: 30px;
+  background-color: rgba(255, 18, 18, 0.137);
+  border-color: rgba(255, 0, 0, 0.767)
+}
+#icone_busca{
+  color: aliceblue;
+  
+}
+.searchImput{
+  text-align: right;
+}
