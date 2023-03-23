@@ -20,14 +20,142 @@ import {
   MDBIcon,
   MDBCardImage
 } from 'mdb-react-ui-kit';
+import { useNavigate } from 'react-router-dom';
+import { usuarios } from "../../components/Data/Usuarios";
 
 export function Login() {
-  const [email, SetEmail] = useState('');
-  const [senha, SetSenha] = useState('');
+
+  
+  const [show ,setShow] = useState(false);
+  const navigate = useNavigate();
+  
+  function signIn () {
+    const email = document.getElementById("formControlLg").value;
+    const senha  = document.getElementById("senha").value;
+    const usuario = usuarios.find(u => ( u.email === email && u.senha === senha)); 
+
+    if (usuario) {
+      navigate("/");
+    }else {
+      setShow(true);
+    }
+  }
 
   return (
     <>
-      {/* <MDBContainer
+     
+      <MDBContainer className="my-5">
+        <MDBCard>
+          <MDBRow className="g-0">
+            <MDBCol md="6">
+              <MDBCardImage
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                alt="login form"
+                className="rounded-start w-100"
+              />
+            </MDBCol>
+
+            <MDBCol md="6">
+              <MDBCardBody className="d-flex flex-column">
+                <div className="d-flex flex-row mt-2">
+                  <MDBIcon
+                    fas
+                    icon="cubes fa-3x me-3"
+                    style={{ color: '#ff6219' }}
+                  />
+                  <span className="h1 fw-bold mb-0">Logo</span>
+                </div>
+
+                <h5
+                  className="fw-normal my-4 pb-3"
+                  style={{ letterSpacing: '1px' }}
+                >
+                  Entre com a sua conta
+                </h5>
+
+                <MDBInput
+                  wrapperClass="mb-4"
+                  label="Email address"
+                  id="formControlLg"
+                  type="email"
+                  size="lg"
+                />
+                <MDBInput
+                  wrapperClass="mb-4"
+                  label="Password"
+                  id="senha"
+                  type="password"
+                  size="lg"
+                />
+
+                <MDBBtn
+                  onClick={signIn}
+                  className="mb-4 px-5"
+                  color="dark"
+                  size="lg"
+                >
+                  Login
+                </MDBBtn>
+
+                <div>
+                  <MDBBtn tag="a" className="mx-3" style={{ color: 'white' }}>
+                    <MDBIcon fab icon="facebook-f" size="md" />
+                  </MDBBtn>
+
+                  <MDBBtn tag="a" className="mx-3" style={{ color: 'white' }}>
+                    <MDBIcon fab icon="twitter" size="md" />
+                  </MDBBtn>
+
+                  <MDBBtn tag="a" className="mx-3" style={{ color: 'white' }}>
+                    <MDBIcon fab icon="google" size="md" />
+                  </MDBBtn>
+
+                  <MDBBtn tag="a" className="mx-3" style={{ color: 'white' }}>
+                    <MDBIcon fab icon="linkedin-in" size="md" />
+                  </MDBBtn>
+                </div>
+                <a className="small text-muted" href="#!">
+                  Esqueceu a Senha?
+                </a>
+                <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>
+                  Não tem conta?{' '}
+                  <a href="#!" style={{ color: '#393f81' }}>
+                    Registre se aqui
+                  </a>
+                </p>
+
+                <div className="d-flex flex-row justify-content-start">
+                  <a href="#!" className="small text-muted me-1">
+                    Termos de uso
+                  </a>
+                  <br />
+                  <br />
+                  <a href="#!" className="small text-muted">
+                    Politica de Privacidade
+                  </a>
+                </div>
+              </MDBCardBody>
+            </MDBCol>
+          </MDBRow>
+        </MDBCard>
+        <ToastContainer position='bottom-end' className='pb-3'>
+          <Toast
+            onClose={() => setShow(false)}
+            show={show}
+            delay={4000}
+            autohide
+          >
+            <Toast.Header>
+              <strong>E-mail ou senha inválido!</strong>
+            </Toast.Header>
+            <Toast.Body>Verifique o e-mail e senha digitado</Toast.Body>
+          </Toast>
+        </ToastContainer>
+      </MDBContainer>
+    </>
+  );
+
+   /* <MDBContainer
         fluid
         className="p-4 background-radial-gradient overflow-hidden"
       >
@@ -155,9 +283,9 @@ export function Login() {
             </MDBCard>
           </MDBCol>
         </MDBRow>
-      </MDBContainer> */}
+      </MDBContainer> */
 
-      {/*  <MDBContainer fluid className="p-3 my-5 h-custom">
+      /*  <MDBContainer fluid className="p-3 my-5 h-custom">
         <MDBRow>
           <MDBCol col="10" md="6">
             <img
@@ -273,116 +401,6 @@ export function Login() {
             </MDBBtn>
           </div>
         </div>
-      </MDBContainer> */}
+  </MDBContainer> */
 
-      <MDBContainer className="my-5">
-        <MDBCard>
-          <MDBRow className="g-0">
-            <MDBCol md="6">
-              <MDBCardImage
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
-                alt="login form"
-                className="rounded-start w-100"
-              />
-            </MDBCol>
-
-            <MDBCol md="6">
-              <MDBCardBody className="d-flex flex-column">
-                <div className="d-flex flex-row mt-2">
-                  <MDBIcon
-                    fas
-                    icon="cubes fa-3x me-3"
-                    style={{ color: '#ff6219' }}
-                  />
-                  <span className="h1 fw-bold mb-0">Logo</span>
-                </div>
-
-                <h5
-                  className="fw-normal my-4 pb-3"
-                  style={{ letterSpacing: '1px' }}
-                >
-                  Entre com a sua conta
-                </h5>
-
-                <MDBInput
-                  wrapperClass="mb-4"
-                  label="Email address"
-                  id="formControlLg"
-                  type="email"
-                  size="lg"
-                />
-                <MDBInput
-                  wrapperClass="mb-4"
-                  label="Password"
-                  id="formControlLg"
-                  type="password"
-                  size="lg"
-                />
-
-                <MDBBtn
-                  onClick={signIn}
-                  className="mb-4 px-5"
-                  color="dark"
-                  size="lg"
-                >
-                  Login
-                </MDBBtn>
-
-                <div>
-                  <MDBBtn tag="a" className="mx-3" style={{ color: 'white' }}>
-                    <MDBIcon fab icon="facebook-f" size="md" />
-                  </MDBBtn>
-
-                  <MDBBtn tag="a" className="mx-3" style={{ color: 'white' }}>
-                    <MDBIcon fab icon="twitter" size="md" />
-                  </MDBBtn>
-
-                  <MDBBtn tag="a" className="mx-3" style={{ color: 'white' }}>
-                    <MDBIcon fab icon="google" size="md" />
-                  </MDBBtn>
-
-                  <MDBBtn tag="a" className="mx-3" style={{ color: 'white' }}>
-                    <MDBIcon fab icon="linkedin-in" size="md" />
-                  </MDBBtn>
-                </div>
-                <a className="small text-muted" href="#!">
-                  Esqueceu a Senha?
-                </a>
-                <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>
-                  Não tem conta?{' '}
-                  <a href="#!" style={{ color: '#393f81' }}>
-                    Registre se aqui
-                  </a>
-                </p>
-
-                <div className="d-flex flex-row justify-content-start">
-                  <a href="#!" className="small text-muted me-1">
-                    Termos de uso
-                  </a>
-                  <br />
-                  <br />
-                  <a href="#!" className="small text-muted">
-                    Politica de Privacidade
-                  </a>
-                </div>
-              </MDBCardBody>
-            </MDBCol>
-          </MDBRow>
-        </MDBCard>
-        <ToastContainer>
-          <Toast
-            onClose={() => setShow(false)}
-            show={show}
-            delay={4000}
-            autohide
-          >
-            <Toast.Header>
-              <strong>E-mail ou senha inválido!</strong>
-            </Toast.Header>
-            <Toast.Body>Verifique o e-mail e senha digitado</Toast.Body>
-          </Toast>
-        </ToastContainer>
-      </MDBContainer>
-    </>
-  );
 }
