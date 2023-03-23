@@ -8,6 +8,8 @@ import { Perfil } from './pages/Perfil/Perfil';
 import { ThemeContext } from './contexts/ThemeContext';
 import { useState } from 'react';
 
+
+
 export function App() {
   const [temaEscuro, settemaEscuro] = useState(false);
 
