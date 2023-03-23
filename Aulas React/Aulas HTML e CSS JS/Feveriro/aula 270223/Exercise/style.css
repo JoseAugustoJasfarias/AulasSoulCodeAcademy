@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(karate-5833111__340.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+a {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+  color: rgb(59, 167, 234);
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  display: block;
+  background-color: rgb(164, 129, 199);
+  width: 100px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  text-align: center;
+  
+
+}
+
+a:active {
+  background-color: aquamarine;
+
+}
+
+a:visited {
+  background-color: rgb(136, 43, 43);
+}
+
+a:hover {
+  background-color: chartreuse;
+}

@@ -1,0 +1,37 @@
+/* 
+    Flex-Box -> Caixa Flexivel
+    * container
+    * items / content
+    * direção
+*/
+
+.border {
+  padding: 0;
+  border: 2px solid black;
+}
+
+.container {
+  width: 500px;
+  height: 300px;
+
+  display: flex;
+  /* container */
+  /* Direção dos items do container */
+  flex-direction: row;
+  /* row (linha), column (coluna), row-reverse, column-reverse */
+  /* Alinhamento do conteudo seguindo a direção definida */
+  /* Alinhamento dos items seguindo a direção perpendicular a direção definida */
+  align-items: center;
+  /* flex-start, flex-end, center, stretch */
+}
+
+.container-2 {
+  width: 500px;
+  height: 300px;
+
+  display: flex;
+  flex-direction: row;
+  /* Quebra de linha/coluna dos conteudos */
+  flex-wrap: wrap;
+  /* nowrap, wrap */
+}
