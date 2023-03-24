@@ -12,6 +12,7 @@ import { NotFound } from './pages/NotFound/NotFound';
 import { Root } from './pages/Root/Root';
 import { EditaUsuario } from './pages/EditaUsuario/EditaUsuario';
 import { Perfil } from './pages/Perfil/Perfil';
+import { Pokemon } from './pages/Pokemon/Pokemon';
 
 
 
@@ -50,6 +51,11 @@ function App() {
               <Route path="/Usuarios" element={<Usuarios />} />
               <Route path="/usuarios/edit/:id" element={<EditaUsuario />} />
               <Route path="/Login" element={<Login />} />
+
+
+            <Route path='/pokemon' element={<Pokemon/>}  />
+
+
               <Route path="*" element={<NotFound />} />
               <Route path="/usuarios/perfil/:id" element={<Perfil />}/>
             
