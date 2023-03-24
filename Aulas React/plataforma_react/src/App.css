@@ -5,10 +5,13 @@
   color: red;
 }
 .navbar a{
-  color:antiquewhite !important;
+  color:rgb(252, 252, 252) !important;
 
 }
 
+nav {
+  background-color: #101214 !important;
+}
 .botao-voltar{
   color: black !important;
 }
@@ -25,7 +28,7 @@
 
 
 .App-header {
-  background-color: #282c34;
+  background-color: #101214;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
