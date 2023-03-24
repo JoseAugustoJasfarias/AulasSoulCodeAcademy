@@ -26,6 +26,9 @@ export function Menu() {
                         <Button variant="link">
                         <Link to="/pokemon">Pokemom </Link>
                         </Button>
+                        <Button variant="link">
+                        <Link to="/superherois">Super Herois </Link>
+                        </Button>
                     </Nav>
                 </Container>
             </Navbar>

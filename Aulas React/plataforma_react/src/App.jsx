@@ -13,25 +13,25 @@ import { Root } from './pages/Root/Root';
 import { EditaUsuario } from './pages/EditaUsuario/EditaUsuario';
 import { Perfil } from './pages/Perfil/Perfil';
 import { Pokemon } from './pages/Pokemon/Pokemon';
-
-
-
-
+import { SuperHero } from './pages/SuperHero/SuperHero';
 
 const Sections = [
   {
     title: 'Section 1',
-    description: 'Lorem t amet consectetur, adipatur sed quas officia totam, aliquid perferendis. Quam iste tempora blanditiis placeat natus doloribus pariatur asperiores sit culpa earum? Sint, delectus accusantium.'
+    description:
+      'Lorem t amet consectetur, adipatur sed quas officia totam, aliquid perferendis. Quam iste tempora blanditiis placeat natus doloribus pariatur asperiores sit culpa earum? Sint, delectus accusantium.'
   },
   {
     title: 'Section 2',
-    description: ' ipsut. Pariatur sed quas officia totam, aliquid perferendis. Quam iste landitiis placeat natus doloribus pariatur asperiores sit culpa earum? Sint, delectus accusantium.'
+    description:
+      ' ipsut. Pariatur sed quas officia totam, aliquid perferendis. Quam iste landitiis placeat natus doloribus pariatur asperiores sit culpa earum? Sint, delectus accusantium.'
   },
   {
     title: 'Section 3',
-    description: 'lor sit amet consectetur, adipisicing elit. Pariatur sed quas officia totam, aliquid perferendis. Quam iste tempora blanditiis placeat natus dores sit culpa earum? Sint, delectus accusantium.'
+    description:
+      'lor sit amet consectetur, adipisicing elit. Pariatur sed quas officia totam, aliquid perferendis. Quam iste tempora blanditiis placeat natus dores sit culpa earum? Sint, delectus accusantium.'
   }
-]
+];
 
 function App() {
   return (
@@ -52,14 +52,12 @@ function App() {
               <Route path="/usuarios/edit/:id" element={<EditaUsuario />} />
               <Route path="/Login" element={<Login />} />
 
-
-            <Route path='/pokemon' element={<Pokemon/>}  />
-
+              <Route path="/pokemon" element={<Pokemon />} />
+              <Route path='/superHerois' element={<SuperHero/>} />
 
               <Route path="*" element={<NotFound />} />
-              <Route path="/usuarios/perfil/:id" element={<Perfil />}/>
-            
-          </Route>
+              <Route path="/usuarios/perfil/:id" element={<Perfil />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </div>
