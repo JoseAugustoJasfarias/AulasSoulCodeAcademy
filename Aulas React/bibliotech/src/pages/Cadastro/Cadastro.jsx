@@ -1,32 +1,60 @@
-import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import logoIcon from '../../assets/icons/livros.png';
-import googleIcon from '../../assets/icons/google-white.svg';
-import { useForm } from 'react-hook-form';
-import { cadastrarEmailSenha, loginGoogle } from '../../firebase/auth';
-import { toast } from 'react-hot-toast';
+import { Button, Container, Form } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import logoIcon from "../../assets/icons/livros.png";
+import googleIcon from "../../assets/icons/google-white.svg";
+import { useForm } from "react-hook-form";
+import { cadastrarEmailSenha, loginGoogle } from "../../firebase/auth";
+import { toast } from "react-hot-toast";
+
+
 
 export function Cadastro() {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
+
+
+  const navigate = useNavigate();
+
 
   function onSubmit(data) {
     const { email, senha } = data;
-    cadastrarEmailSenha(email, senha).then((user) => {
-      console.log(user);
-    });
+    cadastrarEmailSenha(email, senha)
+      .then((user) => {
+        toast.success(`Bem-vindo(a) ${user.email}`, {
+          position: "bottom-right",
+          duration: 2500,
+        });
+        navigate("/")
+      })
+      .catch((erro) => {
+        toast.error(`Um erro aconteceu. Código: ${erro.code} Senha fraca`, {
+          position: "bottom-right",
+          duration: 2500,
+        });
+      });
   }
- 
 
   function onLoginGoogle() {
-    loginGoogle().then((user) =>{
-      toast.success(`Bem vindo (a) ${user.email}`,
-      {position : "bottom-right" ,
-    duration: 3000})
-    });
+    // then = quando der certo o processo
+    loginGoogle()
+      .then((user) => {
+        toast.success(`Bem-vindo(a) ${user.email}`, {
+          position: "bottom-right",
+          duration: 2500,
+        });
+        navigate("/")
+
+      })
+      .catch((erro) => {
+        // tratamento de erro
+        toast.error(`Um erro aconteceu. Código: ${erro.code} Fechamento  inesperado da aba de login`, {
+          position: "bottom-right",
+          duration: 2500,
+        });
+      });
   }
 
   return (
@@ -48,9 +76,9 @@ export function Cadastro() {
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
-            className={errors.email && 'is-invalid'}
+            className={errors.email && "is-invalid"}
             placeholder="Seu email"
-            {...register('email', { required: 'O email é obrigatório' })}
+            {...register("email", { required: "O email é obrigatório" })}
           />
           <Form.Text className="invalid-feedback">
             {errors.email?.message}
@@ -60,9 +88,9 @@ export function Cadastro() {
           <Form.Label>Senha</Form.Label>
           <Form.Control
             type="password"
-            className={errors.senha && 'is-invalid'}
+            className={errors.senha && "is-invalid"}
             placeholder="Sua senha"
-            {...register('senha', { required: 'A senha é obrigatória' })}
+            {...register("senha", { required: "A senha é obrigatória" })}
           />
           <Form.Text className="invalid-feedback">
             {errors.senha?.message}
