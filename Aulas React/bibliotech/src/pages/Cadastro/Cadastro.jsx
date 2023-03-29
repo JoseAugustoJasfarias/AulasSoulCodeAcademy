@@ -1,12 +1,11 @@
 import { Button, Container, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoIcon from "../../assets/icons/livros.png";
 import googleIcon from "../../assets/icons/google-white.svg";
 import { useForm } from "react-hook-form";
 import { cadastrarEmailSenha, loginGoogle } from "../../firebase/auth";
 import { toast } from "react-hot-toast";
-
-
+import { useNavigate } from "react-router-dom";
 
 export function Cadastro() {
   const {
@@ -15,9 +14,7 @@ export function Cadastro() {
     formState: { errors },
   } = useForm();
 
-
   const navigate = useNavigate();
-
 
   function onSubmit(data) {
     const { email, senha } = data;
@@ -27,10 +24,10 @@ export function Cadastro() {
           position: "bottom-right",
           duration: 2500,
         });
-        navigate("/")
+        navigate("/");
       })
       .catch((erro) => {
-        toast.error(`Um erro aconteceu. Código: ${erro.code} Senha fraca`, {
+        toast.error(`Um erro aconteceu. Código: ${erro.code}`, {
           position: "bottom-right",
           duration: 2500,
         });
@@ -45,12 +42,11 @@ export function Cadastro() {
           position: "bottom-right",
           duration: 2500,
         });
-        navigate("/")
-
+        navigate("/");
       })
       .catch((erro) => {
         // tratamento de erro
-        toast.error(`Um erro aconteceu. Código: ${erro.code} Fechamento  inesperado da aba de login`, {
+        toast.error(`Um erro aconteceu. Código: ${erro.code}`, {
           position: "bottom-right",
           duration: 2500,
         });
